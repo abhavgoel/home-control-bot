@@ -35,7 +35,9 @@ async def wake_pc(update: Update, context: ContextTypes.DEFAULT_TYPE):
 )
 
 async def turn_light_on():
-    await light.turn_on(PilotBuilder())
+    await light.turn_on(PilotBuilder(
+        scene=6 #Scene Cozy in Wiz app
+    ))
 
 async def im_home(update: Update, context: ContextTypes.DEFAULT_TYPE):
     send_magic_packet(PC_MAC_ADDRESS)
